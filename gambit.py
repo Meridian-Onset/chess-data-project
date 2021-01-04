@@ -23,18 +23,34 @@ class Gambit:
     def __str__(self):
         return(f'{self.code}, {self.name}: {self.sequence}')
 
+    def __len__(self):
+        #Returns the number of exchanged (WB pairs) moves
+        movelist = [move.strip() for move in self.sequence.split('.')]
+        finalmove = movelist[-1]
+        try:
+            finalmove.split(' ')
+            return(2 * len(self.sequence.split('.')) - 3)
+        except: 
+            return(2 * len(self.sequence.split('.')) - 2)
+
     def move_sequence(self):
-        moves = list()
+        #Return a dictionary of moves
+        moves = dict()
         for i, move in enumerate(self.sequence.split('.')):
             if i == 0: pass
-            else: moves.append(move[0:len(move)-1])
+            elif (len(move)-1) > 4 : moves[i] = move[0:len(move)-1].strip()
+            else: moves[i] = move[0:len(move)].strip()
         return(moves)
+
+    def wb_split(self):
+        moves = self.move_sequence()
+        white = len(moves)
+        if len(moves[list(moves.keys())[-1]]) > 4: black = white
+        else: black = white - 1
+
+        return(f"W:{white} \nB:{black}\nTotal:{black+white}")
 
     def to_dict(self):
         #Returns a dictionary object that can be used to update an existing dictionary
-        return({self.code : (self.name, self.sequence)})
+        return({self.code : (self.name, self.move_sequence())})
 
-if __name__=="__main__":
-    gambitparams = GambitParse('A42  Modern defence, Averbakh system, Randspringer variation1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 f5 ')
-    one = Gambit(*gambitparams)
-    
