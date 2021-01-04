@@ -1,0 +1,17 @@
+id - The online ID number of the game itself
+rated - Whether the game was played for points
+    (More serious if True???)
+created_at - Start of game 
+last_move_at - End of game 
+turns - The number of turns taken before the game ended
+victory_status - The nature of the ending of the game
+winner - The winner, either black or white 
+increment_code - Presumably the time left on each players clock (???)
+white_id - White player ID
+white_rating - White player's ELO rating
+black_id - Black player ID 
+black_rating - Black player ELO rating 
+moves - The total number of moves 
+opening_eco - The ECO code of the opening gambit
+opening_name - Opening gambit's name 
+opening_ply - The opening gambit in standard chess notation
