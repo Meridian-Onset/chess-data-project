@@ -50,5 +50,5 @@ def linestoDict(gambitPath):
     
 
 if __name__ == "__main__":
-    linetoFileParse('./gambitsRaw.txt')
+    lineGetter(url)
 
