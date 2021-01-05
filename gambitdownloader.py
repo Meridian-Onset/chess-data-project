@@ -6,7 +6,7 @@ import os
 url = 'https://www.365chess.com/eco.php'
 
 #Define some regular expressions for use in the linegetter function
-completeExp = '^[A-Z][0-9][0-9] .+ 1\.'
+completeExp = '^[A-Z][0-9][0-9] .+ 1.'
 incompleteExp = '^[A-Z][0-9][0-9]'
 
 def lineGetter(webPath):
@@ -45,7 +45,7 @@ def linetoFileParse(filepath):
 def linestoDict(gambitPath):
     '''Function designed to return a dictionary containing the ECO codes as keys with
     gambit names and move sequences as values'''
-    
+
     
     
 

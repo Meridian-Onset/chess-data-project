@@ -5,11 +5,11 @@ created_at - Start of game
 last_move_at - End of game 
 turns - The number of turns taken before the game ended
 victory_status - The nature of the ending of the game
-winner - The winner, either black or white 
+winner - The winner, either black or white or draw
 increment_code - Presumably the time left on each players clock (???)
-white_id - White player ID
+white_id - White player ID (Dropped)
 white_rating - White player's ELO rating
-black_id - Black player ID 
+black_id - Black player ID (Dropped)
 black_rating - Black player ELO rating 
 moves - The total number of moves 
 opening_eco - The ECO code of the opening gambit
